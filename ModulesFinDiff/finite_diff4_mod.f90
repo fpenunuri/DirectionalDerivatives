@@ -1,3 +1,9 @@
+!FMFD method to compute until the fourth order partial derivative
+!to any order of approximation
+!
+!F. Peñuñuri
+!UADY, Merida Yucatan Mexico
+!2022
 module finite_diff4_mod
   use iso_fortran_env,  only: prc4 => real32, prc8 => real64, &
        prc16 => real128

@@ -400,7 +400,6 @@ contains
   !scalar case
   !rank 1
   !f:Dm-->D
-  !Eq. 
   function d1q_sR(f, v, q) result(fr)
     procedure (dfunction_s) :: f
     real(8), intent(in), dimension(:) :: v 
@@ -654,7 +653,6 @@ contains
 
   !vector case
   !rank 1
-  !Eq. 75
   !The argument n is the dimension of f. This could be avoided
   !using n = size(f(q)). However in order to avoid this function
   !evaluation, n is requested as argument     
@@ -685,7 +683,6 @@ contains
   end function d1q_mnR
 
   !rank 2
-  !Eq. 79
   function d2mlf_mnC(f,x,y,q,n) result(fr)
     procedure (dfunction_mn) :: f
     complex(8), intent(in), dimension(:) :: x, y
@@ -716,7 +713,6 @@ contains
     end if
   end function d2mlf_mnR
 
-  !Eq. 76
   function d2q_mnC(f, v, q, n) result(fr)
     procedure (dfunction_mn) :: f
     complex(8), intent(in), dimension(:) :: v, q
@@ -742,7 +738,6 @@ contains
   end function d2q_mnR
 
   !rank 3
-  !Eq. 80
   !para mejorar la eficiencia, si dos argumentos son iguales, se
   !recomienda ponerlos al prncipio (v,u,v)-->(v,v,u)
   function d3mlf_mnR(f,x,y,z,q,n) result(fr)
@@ -779,7 +774,6 @@ contains
     end if
   end function d3mlf_mnC
 
-  !Eq. 81
   function d3qxxz_mnR(f, x, z, q, n) result(fr)
     procedure (dfunction_mn) :: f
     real(8), intent(in), dimension(:) :: x, z
@@ -802,7 +796,6 @@ contains
          2*d3q_mnC(f,z,q,n))/6
   end function d3qxxz_mnC
 
-  !Eq. 77
   function d3q_mnR(f, v, q, n) result(fr)
     procedure (dfunction_mn) :: f
     real(8), intent(in), dimension(:) :: v, q
@@ -828,7 +821,6 @@ contains
   end function d3q_mnC
 
   !rank 4
-  !Eq. 82
   function d4mlf_mnC(f,x,y,z,w,q,n) result(fr)
     procedure (dfunction_mn) :: f
     complex(8), intent(in), dimension(:) :: x, y, z, w
@@ -867,7 +859,6 @@ contains
     end if
   end function d4mlf_mnR
 
-  !Eq. 83
   function d4qxxzw_mnC(f, x, z, w, q, n) result(fr)
     procedure (dfunction_mn) :: f
     complex(8), intent(in), dimension(:) :: x, z, w
@@ -890,7 +881,6 @@ contains
          d4qxxzz_mnR(f,x,w,q,n))/2
   end function d4qxxzw_mnR
 
-  !Eq. 84
   function d4qxxzz_mnC(f, x, z, q, n) result(fr)
     procedure (dfunction_mn) :: f
     complex(8), intent(in), dimension(:) :: x, z
@@ -919,7 +909,6 @@ contains
     fr = (d4xzp + d4xzm - 2*d4q_mnR(f,x,q,n) - 2*d4q_mnR(f,z,q,n))/12
   end function d4qxxzz_mnR
 
-  !Eq. 78
   function d4q_mnC(f, v, q, n) result(fr)
     procedure (dfunction_mn) :: f
     complex(8), intent(in), dimension(:) :: v, q
